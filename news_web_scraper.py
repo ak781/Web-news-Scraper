@@ -14,6 +14,8 @@ for category in categories:
     headlines = soup.find_all('span',itemprop='headline')
     all_headlines.extend([h1.get_text(strip=True) for h1 in headlines])
 
+# Writing the headlines from all_headlines to headlines.txt 
+
 with open("headlines.txt","w",encoding="utf-8") as file:
     for idx,headline in enumerate(all_headlines):
         file.write(f"{idx+1}. {headline}\n")
